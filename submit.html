@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Complaint Website</title>
+  <link rel="stylesheet" href="submit.css">
+</head>
+<body>
+  <header>
+    <h1>Campus Complaint Website</h1>
+    <nav>
+      <a href="index.html">Home Page</a>
+      <a href="submit.html">Submit Complaint</a>
+      <a href="track.html">Track Complaint</a>
+    </nav>
+  </header>
+
+  <form>
+    <h2>Submit a Complaint</h2>
+    <p>Enter the details of the campus problem.</p>
+
+    <form id="complaintForm">
+      <label for="studentName">Your name</label>
+      <input type="text" id="studentName" name="studentName" required>
+
+      <label for="category">Complaint category</label>
+      <select id="category" name="category" required>
+        <option value="">Choose one</option>
+        <option>Classroom</option>
+        <option>Facilities</option>
+        <option>Cleanliness</option>
+        <option>Other</option>
+      </select>
+
+      <label for="complaint">Describe the problem</label>
+      <textarea id="complaint" name="complaint" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </form>
+
+  <footer>Campus Complaint Website · Student project demo</footer>
+  <script src="script.js"></script>
+</body>
+</html>
