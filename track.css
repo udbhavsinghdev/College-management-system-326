@@ -1,68 +1,227 @@
+/* root is used for defining all color in variable and later calling them whenever whereever needed took this idea from youtuber named brocode*/
+:root {
+  --bg-color: #F8FAFC;
+  --surface-card: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-primary: #1E293B;
+  --text-muted: #64748B;
+  --accent-btn: #1E3A8A;
+  --btn-hover: #172554;
+  --badge-pending-bg: #FEF3C7;
+  --badge-pending-text: #92400E;
+  --badge-resolved-bg: #DCFCE7;
+  --badge-resolved-text: #166534;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(#ffc800,#ffffff);
-  color: #222;
-  border: #222, 2px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.user {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.user svg {
+  stroke: var(--accent-btn);
+  transition: stroke 0.2s ease;
+}
+
+.user:hover svg {
+  stroke: var(--btn-hover);
 }
 
 header {
-  background: radial-gradient(#ffffff,#ffc800);
-  color: black;
+  background-color: var(--surface-card);
+  color: var(--text-primary);
   text-align: center;
-  padding: 18px;
-  border: #222, 2px;
+  padding: 24px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 nav a {
-  color: rgb(0, 0, 0);
-  margin: 8px;
-  text-decoration: underline;
+  color: var(--accent-btn);
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   text-decoration: underline;
+  color: var(--btn-hover);
 }
 
 main {
-  width: 80%;
+  width: 85%;
   max-width: 700px;
-  margin: 25px auto;
-  padding: 20px;
-  background-color: white;
+  margin: 32px auto;
+  padding: 28px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
-  color: #f70303;
+  color: var(--accent-btn);
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+main > p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-container input:focus {
+  border-color: var(--accent-btn);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+  background-color: #FFFFFF;
 }
 
 .status {
-  margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #aaa;
-  background-color: #f9f9f9;
+  margin-top: 14px;
+  padding: 16px 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.status h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.status p {
+  margin: 6px 0;
+  color: var(--text-primary);
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.badge-pending {
+  background-color: var(--badge-pending-bg);
+  color: var(--badge-pending-text);
+}
+
+.badge-resolved {
+  background-color: var(--badge-resolved-bg);
+  color: var(--badge-resolved-text);
+}
+
+.no-results {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-color);
 }
 
 .note {
-  margin-top: 18px;
-  color: #555;
-  font-size: 14px;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.action-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent-btn);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+  color: var(--btn-hover);
 }
 
 footer {
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  color: #555;
+  color: var(--text-muted);
+  font-size: 13px;
 }
 
 @media (max-width: 600px) {
+
+  .top-right-user {
+    top: 12px;
+    right: 12px;
+  }
+
+
+  .top-right-user svg {
+    width: 28px;
+    height: 28px;
+  }
+
   nav a {
     display: inline-block;
-    margin: 8px 4px;
+    margin: 6px 8px;
   }
 
   main {
     width: 90%;
-    padding: 14px;
+    padding: 18px;
+    margin: 20px auto;
   }
 }
